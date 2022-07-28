@@ -11,8 +11,7 @@ $password = $publishingProfile.publishData.publishProfile[0].userPWD
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
 
 $bodyToPOST = @{  
-                  command = "find . -mindepth 1 -delete"  
-                  dir = "/home/site/wwwroot"  
+DELETE /api/vfs/site/wwwroot
 }  
 # Splat all parameters together in $param  
 $param = @{  
